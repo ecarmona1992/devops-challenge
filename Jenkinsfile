@@ -5,19 +5,9 @@ pipeline{
         stage("A"){
             steps{
                 echo "Cloning git"
+                git "https://github.com/ecarmona1992/devops-challenge.git"
                 
             }
-        }
-    }
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
         }
     }
 }
