@@ -32,7 +32,11 @@ pipeline{
         }
         stage("Deploy"){
             steps{
-                echo "Docker image deployed to docker hub"
+                script {
+                    docker.withRegistry( 'https://registry.hub.docker.com ', registryCredential ) {
+                        // push image to registry
+                        dockerImage.push()
+                }
             }
         }
     }
