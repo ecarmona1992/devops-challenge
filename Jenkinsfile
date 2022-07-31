@@ -1,10 +1,10 @@
 pipeline{
     // setting up dockhub information needed to push image.
-    environment {
-        registry = "ecarmona1992/devops-challenge"
-        registrycredential = 'docker-hub'
-        dockerimage = ''
-    }
+    // environment {
+    //     registry = "ecarmona1992/devops-challenge"
+    //     registrycredential = 'docker-hub'
+    //     dockerimage = ''
+    // }
     agent any
 
     stages{
@@ -12,7 +12,7 @@ pipeline{
             steps{
                 echo "Cloning git"
                 sh 'git clone https://github.com/ecarmona1992/devops-challenge.git'
-                sh "docker system prune -af"
+                // sh "docker system prune -af"
             }
         }
         stage("testing"){
