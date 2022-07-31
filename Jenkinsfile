@@ -20,20 +20,20 @@ pipeline{
                 echo "passed test"
             }
         }
-        stage("build"){
-            steps{
-                script{
-                    // reference: https://www.jenkins.io/doc/book/pipeline/jenkinsfile/
-                    img = registry + "test"
-                    // reference: https://docs.cloudbees.com/docs/admin-resources/latest/plugins/docker-workflow
-                    dockerImage = docker.build("${img}")
-                }
-            }
-        }
-        stage("Deploy"){
-            steps{
-                echo "Docker image deployed to docker hub"
-            }
-        }
+        // stage("build"){
+        //     steps{
+        //         script{
+        //             // reference: https://www.jenkins.io/doc/book/pipeline/jenkinsfile/
+        //             img = registry + "test"
+        //             // reference: https://docs.cloudbees.com/docs/admin-resources/latest/plugins/docker-workflow
+        //             dockerImage = docker.build("${img}")
+        //         }
+        //     }
+        // }
+        // stage("Deploy"){
+        //     steps{
+        //         echo "Docker image deployed to docker hub"
+        //     }
+        // }
     }
 }
